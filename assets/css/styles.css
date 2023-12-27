@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+:root {
+  --font-dark: #3a404a;
+  --color-primary: #2e9eb7;
+  --bg-primary: #e4e4e4;
+  --bg-hero: #dadada;
+  --skill-gray: #cbc5c5;
+  --link-hover-color: #828b9d;
+  --container-width: calc(100% - 20%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--bg-primary);
+}
+
+header {
+  display: grid;
+}
+
+/* navbar */
+nav {
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.75rem 2rem;
+}
+
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.nav__links {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  gap: 2.65rem;
+  min-height: 100vh;
+  background-color: var(--bg-hero);
+  top: 0;
+  right: 0;
+  padding: 2rem;
+}
+
+.nav__links-link {
+  color: var(--font-dark);
+  transition: 0.5s;
+}
+
+.nav__links-link:hover {
+  color: var(--link-hover-color);
+}
+
+.close {
+  display: inherit;
+  cursor: pointer;
+}
+
+.hamburger {
+  font-size: 2rem;
+  color: var(--font-dark);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* hero */
+.hero {
+  background-color: var(--bg-hero);
+  padding: 2rem;
+}
+
+.hero__container {
+  display: grid;
+  grid-template-rows: 300px 300px;
+}
+
+.hero__text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.3rem;
+  order: 1;
+}
+
+.emphasize {
+  color: var(--color-primary);
+}
+
+.hero__text > .name {
+  font-size: 1.75rem;
+}
+
+.hero__text > .role {
+  font-size: 2rem;
+}
+
+.hero__bg {
+  background-image: url("../images/hero-img.jpg");
+  background-size: cover;
+}
+
+/* skills */
+.skills {
+  padding: 0 2rem;
+  margin-top: 5rem;
+}
+
+.skills__content {
+  margin-top: 1.875rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.skills__content-skill {
+  font-weight: 600;
+}
+
+.skills__content-skill_level > p {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+/* contact */
+.contact {
+  margin-top: 5rem;
+  padding: 0 2rem;
+}
+
+.contact__content {
+  margin-top: 1.875rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contact__content > p:first-child {
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.contact__content > a > button {
+  border: none;
+  border-radius: 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-primary);
+  color: #fff;
+  cursor: pointer;
+}
+
+/* footer */
+footer {
+  background-color: var(--color-primary);
+  color: #fff;
+  margin-top: 5rem;
+  padding: 1.875rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+footer > .socials {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+footer > .socials > a {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+@media (min-width: 600px) {
+  body {
+    padding: 0;
+  }
+
+  /* navbar */
+  nav {
+    width: var(--container-width);
+    padding: 1.75rem 0;
+    margin: auto;
+  }
+
+  .nav__links {
+    position: initial;
+    display: flex;
+    flex-direction: row;
+    min-height: max-content;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .nav__links-action,
+  .nav__close {
+    display: none;
+  }
+
+  /* hero */
+
+  .hero__container {
+    width: var(--container-width);
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin: auto;
+  }
+
+  .hero__text {
+    order: 0;
+    padding: 9.4rem 0;
+    flex: 1;
+    font-size: 2rem;
+  }
+
+  .hero__text > .name {
+    font-size: 3rem;
+  }
+
+  .hero__text > .role {
+    font-size: 4rem;
+  }
+
+  .hero__bg {
+    flex: 1;
+  }
+
+  /* skills */
+  .skills {
+    width: var(--container-width);
+    margin: auto;
+    margin: 5rem auto 0;
+  }
+
+  .skills > h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .skills__content {
+    font-size: 1.25rem;
+    width: max-content;
+    margin: auto;
+    margin-top: 1.875rem;
+  }
+
+  /* contact */
+  .contact {
+    width: var(--container-width);
+    margin: 5rem auto 0;
+  }
+
+  .contact > h1 {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .contact__content {
+    align-items: center;
+  }
+}
